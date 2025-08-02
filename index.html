@@ -3,59 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
+  <title>Northstar Politics</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <h2 class="nav-logo">My Website</h2>
-      <ul class="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- Fixed Header with Home Icon -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="home-link">
+        <img src="images/white text no background logo.svg" alt="Northstar Politics Home" class="home-icon">
+      </a>
     </div>
-  </nav>
+  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <h1>Welcome to My Website</h1>
-      <p>This is my first website built with Cursor and GitHub!</p>
-      <button class="cta-button" onclick="showMessage()">Click Me!</button>
-    </section>
-
-    <section id="about" class="about">
-      <h2>About</h2>
-      <p>This is a simple website created to learn web development. It features HTML, CSS, and JavaScript working together to create an interactive experience.</p>
-      <div class="features">
-        <div class="feature-card">
-          <h3>HTML</h3>
-          <p>Structure and content</p>
-        </div>
-        <div class="feature-card">
-          <h3>CSS</h3>
-          <p>Styling and design</p>
-        </div>
-        <div class="feature-card">
-          <h3>JavaScript</h3>
-          <p>Interactivity and functionality</p>
-        </div>
+  <div class="container">
+    <div class="logo-container">
+      <div class="logo-wrapper" onclick="spinCompass()">
+        <img src="images/white logo no background.svg" alt="Northstar Politics Logo" class="logo" id="logo">
+        <div class="compass-overlay" id="compass-overlay"></div>
       </div>
-    </section>
+    </div>
+    
+    <div class="tagline">
+      <p>Classic expertise. Contemporary impact.</p>
+      <p>Coming soon.</p>
+    </div>
+  </div>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Get in touch with me!</p>
-      <div class="contact-info">
-        <p>Email: hello@mywebsite.com</p>
-        <p>Location: Internet</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 My Website. Built with ❤️ using Cursor and GitHub.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      © 2025 Northstar Politics Ltd. All rights reserved. Reg No. <a href="https://find-and-update.company-information.service.gov.uk/company/15415602" target="_blank">15415602</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
