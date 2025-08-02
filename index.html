@@ -7,8 +7,57 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to My Website</h1>
-  <p>This is my first website built with Cursor and GitHub!</p>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="nav-logo">My Website</h2>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <h1>Welcome to My Website</h1>
+      <p>This is my first website built with Cursor and GitHub!</p>
+      <button class="cta-button" onclick="showMessage()">Click Me!</button>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>This is a simple website created to learn web development. It features HTML, CSS, and JavaScript working together to create an interactive experience.</p>
+      <div class="features">
+        <div class="feature-card">
+          <h3>HTML</h3>
+          <p>Structure and content</p>
+        </div>
+        <div class="feature-card">
+          <h3>CSS</h3>
+          <p>Styling and design</p>
+        </div>
+        <div class="feature-card">
+          <h3>JavaScript</h3>
+          <p>Interactivity and functionality</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Get in touch with me!</p>
+      <div class="contact-info">
+        <p>Email: hello@mywebsite.com</p>
+        <p>Location: Internet</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My Website. Built with ❤️ using Cursor and GitHub.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html> 
