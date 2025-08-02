@@ -5,208 +5,260 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Lora', serif;
+  background: linear-gradient(180deg, #FF3130 0%, #E62E2D 50%, #CC2929 100%);
+  color: white;
   min-height: 100vh;
+  display: block; /* Change from flex to block layout */
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Navigation */
-.navbar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+/* Fixed Header Styles */
+.header {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 49, 48, 0.95);
+  backdrop-filter: blur(10px);
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 70px; /* Keep navbar height fixed */
+  display: flex;
+  align-items: center; /* Center vertically */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: visible; /* Allow logo to extend beyond navbar */
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+.header-container {
+  width: 100%;
+  padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  height: 100%;
+  justify-content: flex-start; /* Position to left */
+  position: relative; /* For absolute positioning of logo */
+}
+
+.home-link {
+  display: flex;
+  align-items: center; /* Center vertically */
+  height: 100%;
+  transition: transform 0.3s ease;
+  padding: 0.5rem 0;
+  position: absolute; /* Position absolutely to allow overflow */
+  left: 2rem; /* Position from left edge */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Perfect vertical centering */
+}
+
+.home-link:hover {
+  transform: translateY(-50%) scale(1.05); /* Maintain centering while scaling */
+}
+
+.home-icon {
+  width: 600px; /* 1.5x larger than 400px */
+  height: auto;
+  max-height: 150px; /* 1.5x larger than 100px */
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.container {
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  margin: 80px auto 0; /* Center horizontally, top margin for header */
+  min-height: calc(100vh - 160px); /* Ensure proper spacing for footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.nav-logo {
-  color: #667eea;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-menu a:hover {
-  color: #667eea;
-}
-
-/* Main Content */
-main {
-  margin-top: 80px;
-}
-
-section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  color: white;
-  padding: 6rem 2rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-.cta-button {
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* About Section */
-.about {
-  background: white;
-  border-radius: 20px;
-  margin: 2rem auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.about h2 {
-  text-align: center;
-  color: #667eea;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.about p {
-  text-align: center;
-  font-size: 1.1rem;
+.logo-container {
   margin-bottom: 3rem;
-  color: #666;
 }
 
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.feature-card {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
+.logo-wrapper {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
   transition: transform 0.3s ease;
 }
 
-.feature-card:hover {
-  transform: translateY(-5px);
+.logo-wrapper:hover {
+  transform: scale(1.05);
 }
 
-.feature-card h3 {
+.logo {
+  width: 600px;
+  height: auto;
+  max-width: 100%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.compass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.logo-wrapper.spinning .logo {
+  animation: spin 2s ease-in-out;
+}
+
+.logo-wrapper.spinning .compass-overlay {
+  opacity: 1;
+  animation: pulse 2s ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.tagline {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.95;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Contact Section */
-.contact {
-  background: white;
-  border-radius: 20px;
-  margin: 2rem auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+/* Footer Styles */
+.footer {
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2rem 0;
   text-align: center;
-}
-
-.contact h2 {
-  color: #667eea;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.contact-info {
+  font-family: 'Lora', serif;
+  font-size: 0.875rem;
+  color: white;
   margin-top: 2rem;
 }
 
-.contact-info p {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-  color: #666;
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-/* Footer */
-footer {
-  background: rgba(0, 0, 0, 0.8);
+.footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
   color: white;
-  text-align: center;
-  padding: 2rem;
-  margin-top: 4rem;
 }
 
 /* Responsive Design */
+@media (min-width: 1920px) {
+  .home-icon {
+    width: 600px; /* 1.5x larger than 400px */
+    max-height: 150px; /* 1.5x larger than 100px */
+  }
+  
+  .header {
+    height: 70px;
+  }
+}
+
 @media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    gap: 1rem;
+  .header {
+    height: 60px; /* Keep navbar height fixed */
   }
   
-  .nav-menu {
-    gap: 1rem;
+  .header-container {
+    padding: 0 1rem;
   }
   
-  .hero h1 {
-    font-size: 2rem;
+  .home-link {
+    left: 1rem; /* Adjust left position for mobile */
   }
   
-  .hero p {
+  .home-icon {
+    width: 480px; /* 1.5x larger than 320px */
+    max-height: 120px; /* 1.5x larger than 80px */
+  }
+  
+  .container {
+    margin: 70px auto 0; /* Adjusted for standard header */
+    min-height: calc(100vh - 130px);
+    padding: 1rem;
+  }
+  
+  .logo {
+    width: 420px;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+  
+  .footer {
+    font-size: 0.8rem;
+    padding: 1.5rem 0;
+  }
+  
+  .footer-content {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 55px; /* Keep navbar height fixed */
+  }
+  
+  .home-link {
+    left: 0.5rem; /* Adjust left position for very small screens */
+  }
+  
+  .home-icon {
+    width: 390px; /* 1.5x larger than 260px */
+    max-height: 105px; /* 1.5x larger than 70px */
+  }
+  
+  .container {
+    margin: 60px auto 0; /* Adjusted for smaller header */
+    min-height: calc(100vh - 115px);
+  }
+  
+  .logo {
+    width: 330px;
+  }
+  
+  .tagline {
     font-size: 1rem;
   }
   
-  .features {
-    grid-template-columns: 1fr;
-  }
-  
-  section {
-    padding: 2rem 1rem;
+  .footer {
+    font-size: 0.75rem;
+    padding: 1rem 0;
   }
 } 
