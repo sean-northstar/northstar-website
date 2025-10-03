@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page - Northstar Politics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-list {
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .feature-list li {
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+        }
+
+        .status {
+            background: rgba(0, 255, 0, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Test Page</h1>
+        <p>Welcome to your local hosted test page!</p>
+        
+        <div class="status">
+            <strong>✅ Status:</strong> Local development server is running successfully
+        </div>
+
+        <div class="feature-list">
+            <h3>🎯 Features Available:</h3>
+            <ul>
+                <li>✅ Local development server running</li>
+                <li>✅ React app with restored code</li>
+                <li>✅ Larger header text (4rem)</li>
+                <li>✅ Enhanced gradient background</li>
+                <li>✅ Glimmering underline animation</li>
+                <li>✅ All styling improvements</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="button">🏠 Main Website</a>
+        <a href="http://localhost:5173" class="button">⚛️ React App</a>
+        <a href="http://localhost:5174" class="button">🔄 Alternative Port</a>
+        
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+            Generated on: <span id="datetime"></span>
+        </p>
+    </div>
+
+    <script>
+        // Display current date and time
+        document.getElementById('datetime').textContent = new Date().toLocaleString();
+        
+        // Add some interactive effects
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Add a ripple effect
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.left = e.offsetX + 'px';
+                ripple.style.top = e.offsetY + 'px';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
