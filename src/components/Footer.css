@@ -1,0 +1,48 @@
+/* Footer Styles */
+.footer {
+  background: linear-gradient(180deg, #8B0000 0%, #7A0000 25%, #6B0000 50%, #5C0000 75%, #4D0000 100%);
+  padding: 2rem 0;
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-size: 0.875rem;
+  color: white;
+  margin-top: 0;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.8rem;
+    padding: 1.5rem 0;
+  }
+  
+  .footer-content {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.75rem;
+    padding: 1rem 0;
+  }
+}
