@@ -148,18 +148,18 @@ const About: React.FC = () => {
       />
       <main className="about-main">
         <div className="about-content">
-          <h1 className="about-title">About Northstar Politics</h1>
+          <h1 className="about-title">About Northstar</h1>
           
           {/* Mission Statement */}
           <div className="mission-section">
             <p className="mission-text">
-              Principles don't have to be compromised in politics, our aim is to produce political content that encourages people challenge the narratives they have been fed.
+              We started Northstar in 2024, when we wanted to help use our skills to hold politicians accountable for their decisions to support the genocide in Gaza. We worked across 4 different independent campaigns for MPs in London including the likes of Jeremy Corbyn. Like many, we're disillusioned with the status quo and so, through content we hope to push the limits of our political imagination and host conversations that inspire optimism and idealism.
             </p>
           </div>
 
           {/* Co-Founders Section */}
           <div className="founders-section">
-            <h2 className="founders-title">Co-Founders</h2>
+            <h2 className="founders-title">Founders</h2>
             
             <div className="founders-grid">
               {/* Sean */}
@@ -223,7 +223,7 @@ const About: React.FC = () => {
                     </button>
                   </div>
                   <p className="modal-about">
-                    6ft 2 god fearing alpha male.
+                    Sean was born and raised in North London. After graduating in PPE from Oxford he decided to pursue a career in TechForGood and now builds technology for charities and nonprofits. Alongside this he is a popular online content creator who reverted to Islam producing videos and essays on Politics, Philosophy and Religion.
                   </p>
                 </div>
               </div>
@@ -258,7 +258,7 @@ const About: React.FC = () => {
                     </button>
                   </div>
                   <p className="modal-about">
-                    just any guy.
+                    Noah was born and raised in East London. After graduating in PPE from Oxford he moved into banking for top tier firms and became quickly disillusioned. Since then he's travelled the world educating young people across different subjects. He is an avid writer with a special focus on ancient classics, philosophy, fiction and social commentary.
                   </p>
                 </div>
               </div>
