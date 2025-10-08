@@ -3,8 +3,17 @@ import './About.css';
 
 const About: React.FC = () => {
   const [selectedFounder, setSelectedFounder] = useState<string | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
+
+  const slideImages = [
+    '/images/duo pic 2.jpg',
+    '/images/duo pic 4.jpg',
+    '/images/duo pic 3.jpg',
+    '/images/duo pic 5.jpg',
+    '/images/duo pic 6.jpg'
+  ];
 
   const handleFounderClick = (founder: string) => {
     setSelectedFounder(founder);
@@ -16,6 +25,18 @@ const About: React.FC = () => {
 
   const handleSocialClick = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slideImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slideImages.length) % slideImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
   };
 
   // Particle animation
@@ -152,9 +173,39 @@ const About: React.FC = () => {
           
           {/* Mission Statement */}
           <div className="mission-section">
-            <p className="mission-text">
-              We started Northstar in 2024, when we wanted to help use our skills to hold politicians accountable for their decisions to support the genocide in Gaza. We worked across 4 different independent campaigns for MPs in London including the likes of Jeremy Corbyn. Like many, we're disillusioned with the status quo and so, through content we hope to push the limits of our political imagination and host conversations that inspire optimism and idealism.
-            </p>
+            <div className="mission-text-container">
+              <p className="mission-text">
+                We started Northstar in 2024, when we wanted to help use our skills to hold politicians accountable for their decisions to support the genocide in Gaza. We worked across 4 different independent campaigns for MPs in London including the likes of Jeremy Corbyn. Like many, we're disillusioned with the status quo and so, through content we hope to push the limits of political imagination and host conversations that inspire optimism and idealism.
+              </p>
+            </div>
+            
+            <div className="slideshow-container">
+              <div className="slideshow-wrapper">
+                <img 
+                  src={slideImages[currentSlide]} 
+                  alt={`Northstar duo ${currentSlide + 1}`}
+                  className="slideshow-image"
+                />
+                
+                <button className="slide-arrow slide-prev" onClick={prevSlide}>
+                  ‹
+                </button>
+                <button className="slide-arrow slide-next" onClick={nextSlide}>
+                  ›
+                </button>
+                
+                <div className="slide-dots">
+                  {slideImages.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`slide-dot ${index === currentSlide ? 'active' : ''}`}
+                      onClick={() => goToSlide(index)}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Co-Founders Section */}

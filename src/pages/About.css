@@ -67,6 +67,18 @@
 .mission-section {
   margin-bottom: 5rem;
   padding: 0 2rem;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mission-text-container {
+  flex: 1;
+  max-width: 500px;
 }
 
 .mission-text {
@@ -77,8 +89,96 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   font-family: 'Lora', serif;
   font-style: italic;
-  max-width: 800px;
-  margin: 0 auto;
+  text-align: left;
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+  flex: 1;
+  max-width: 450px;
+}
+
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.slide-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slide-prev {
+  left: 10px;
+}
+
+.slide-next {
+  right: 10px;
+}
+
+.slide-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.slide-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.slide-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.slide-dot.active {
+  background: white;
+  border-color: white;
+  transform: scale(1.3);
 }
 
 /* Founders Section */
@@ -181,10 +281,41 @@
   .mission-section {
     margin-bottom: 4rem;
     padding: 0 1rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .mission-text-container {
+    max-width: 100%;
   }
   
   .mission-text {
     font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .slideshow-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .slide-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+  }
+  
+  .slide-prev {
+    left: 5px;
+  }
+  
+  .slide-next {
+    right: 5px;
+  }
+  
+  .slide-dot {
+    width: 10px;
+    height: 10px;
   }
   
   .founders-title {
@@ -230,10 +361,28 @@
   .mission-section {
     margin-bottom: 3rem;
     padding: 0 0.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   
   .mission-text {
     font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .slideshow-container {
+    max-width: 100%;
+  }
+  
+  .slide-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.8rem;
+  }
+  
+  .slide-dot {
+    width: 8px;
+    height: 8px;
   }
   
   .founders-title {
