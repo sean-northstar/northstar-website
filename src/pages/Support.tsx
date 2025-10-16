@@ -25,9 +25,22 @@ const Support: React.FC = () => {
             We're an independent duo doing this for the love of the game. Those who support our work early on will be added to a special chat where you can have say in shaping the future of our work and content!
           </p>
           
-          <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ 
+            marginTop: '2rem', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            gap: '1.5rem',
+            flexWrap: 'wrap',
+            alignItems: 'center'
+          }}>
             <stripe-buy-button
               buy-button-id="buy_btn_1SFyHVEnwS9j9OFloHPKkus5"
+              publishable-key="pk_live_51SEXjZEnwS9j9OFlmyMdQKxz7rIHb47MxLJM18X1HnCZ8aOTeffdWGtwftm9rTE2za1uEELkbA5SVlC0zKosk5jn00xVRmDoos"
+            >
+            </stripe-buy-button>
+            
+            <stripe-buy-button
+              buy-button-id="buy_btn_1SGMs0EnwS9j9OFlmvw0Iec8"
               publishable-key="pk_live_51SEXjZEnwS9j9OFlmyMdQKxz7rIHb47MxLJM18X1HnCZ8aOTeffdWGtwftm9rTE2za1uEELkbA5SVlC0zKosk5jn00xVRmDoos"
             >
             </stripe-buy-button>

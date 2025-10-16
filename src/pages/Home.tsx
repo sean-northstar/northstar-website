@@ -141,7 +141,7 @@ const Home: React.FC = () => {
         <div className="content-wrapper">
           {/* Main Heading */}
           <h1 className="main-heading">
-            Make the impossible, <strong><em>real.</em></strong>
+            Pushing political <strong><em>imagination.</em></strong>
           </h1>
           
           {/* Decorative Line */}
@@ -149,7 +149,7 @@ const Home: React.FC = () => {
           
           {/* Sub-text */}
           <p className="sub-text">
-            We aim to push political imagination, in a time where our discourse is afraid to <em>dream.</em>
+            A new political platform that dares to <em>dream.</em>
           </p>
           
           {/* Compass Icon */}
