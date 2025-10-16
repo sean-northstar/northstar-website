@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- Primary Meta Tags -->
-  <title>Northstar Politics - Make the impossible, real.</title>
+  <title>Northstar Politics - Push political imagination.</title>
   <!-- Force rebuild -->
-  <meta name="title" content="Northstar Politics - Make the impossible, real.">
-  <meta name="description" content="We aim to push political imagination, in a time where our discourse is afraid to dream.">
+  <meta name="title" content="Northstar Push Political Imagination">
+  <meta name="description" content="A new political platform that dares to dream.">
   <meta name="keywords" content="Northstar Politics, political imagination, political discourse, YouTube, Instagram, Substack">
   <meta name="author" content="Northstar Politics">
   <meta name="robots" content="index, follow">
@@ -16,8 +16,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://northstarpolitics.com/">
-  <meta property="og:title" content="Northstar Politics - Make the impossible, real.">
-  <meta property="og:description" content="We aim to push political imagination, in a time where our discourse is afraid to dream.">
+  <meta property="og:title" content="Northstar Push Political Imagination">
+  <meta property="og:description" content="A new political platform that dares to dream.">
   <meta property="og:image" content="https://northstarpolitics.com/images/white logo red background.png">
   <meta property="og:image:width" content="800">
   <meta property="og:image:height" content="800">
@@ -27,8 +27,8 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://northstarpolitics.com/">
-  <meta property="twitter:title" content="Northstar Politics - Make the impossible, real.">
-  <meta property="twitter:description" content="We aim to push political imagination, in a time where our discourse is afraid to dream.">
+  <meta property="twitter:title" content="Northstar Push Political Imagination">
+  <meta property="twitter:description" content="A new political platform that dares to dream.">
   <meta property="twitter:image" content="https://northstarpolitics.com/images/white logo red background.png">
   <meta property="twitter:site" content="@northstarpolitics">
   
@@ -41,6 +41,34 @@
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://northstarpolitics.com/">
+  
+  <!-- Structured Data for Google Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Northstar Politics",
+    "url": "https://northstarpolitics.com",
+    "logo": "https://northstarpolitics.com/images/white logo red background.png",
+    "image": "https://northstarpolitics.com/images/white logo red background.png",
+    "description": "A new political platform that dares to dream. We aim to push political imagination, in a time where our discourse is afraid to dream.",
+    "sameAs": [
+      "https://www.youtube.com/@northstarpolitics",
+      "https://www.instagram.com/northstarpolitics",
+      "https://substack.com/@northstarpolitics"
+    ],
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Sean Sinanan"
+      },
+      {
+        "@type": "Person",
+        "name": "Noah"
+      }
+    ]
+  }
+  </script>
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/red logo no background-52cd2111-52cd2111.svg">
@@ -65,8 +93,13 @@
     }(window.location))
   </script>
   
-  <script type="module" crossorigin src="/assets/index-46ff5b74.js"></script>
-  <link rel="stylesheet" href="/assets/index-78783af2.css">
+  <!-- 
+    ⚠️ IMPORTANT: DO NOT CHANGE THE SCRIPT TAG BELOW! ⚠️
+    This file is for DEVELOPMENT only.
+    During production builds, Vite automatically transforms this to use hashed assets.
+    Always keep this pointing to /src/main.tsx - NEVER use /assets/index-*.js here!
+  -->
+  <script type="module" src="/src/main.tsx"></script>
 </head>
 <body>
   <div id="root"></div>
