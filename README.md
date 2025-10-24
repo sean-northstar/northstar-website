@@ -50,6 +50,30 @@ npm run build
 
 The built files will be in the `dist` directory.
 
+### Validation
+
+Before committing changes, you can validate that `index.html` is correctly configured:
+
+```bash
+npm run validate
+```
+
+This checks that the development `index.html` hasn't been accidentally updated with production asset references.
+
+## Deployment
+
+This site is automatically deployed via GitHub Actions when you push to the `main` branch.
+
+**📖 For detailed deployment instructions and troubleshooting, see [DEPLOYMENT.md](./DEPLOYMENT.md)**
+
+### Quick Deploy:
+1. Make your changes
+2. Commit: `git add . && git commit -m "Your message"`
+3. Push: `git push origin main`
+4. GitHub Actions automatically builds and deploys!
+
+**⚠️ IMPORTANT:** Never manually edit the script tag in `index.html` - it should always reference `/src/main.tsx` for development. The production build is handled automatically.
+
 ## Social Media Links
 
 - **YouTube**: [@northstarshow](https://www.youtube.com/@northstarshow)

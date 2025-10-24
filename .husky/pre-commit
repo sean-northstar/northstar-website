@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Check if index.html has the correct development script tag
+if grep -q 'src="/assets/index-.*\.js"' index.html; then
+  echo "❌ ERROR: index.html contains production asset references!"
+  echo "The root index.html should reference /src/main.tsx for development."
+  echo "Production builds are handled automatically by GitHub Actions."
+  echo ""
+  echo "Please restore index.html to reference /src/main.tsx"
+  exit 1
+fi
+
+echo "✅ index.html validation passed"
+exit 0
+
+

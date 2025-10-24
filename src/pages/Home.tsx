@@ -170,6 +170,20 @@ const Home: React.FC = () => {
               YouTube
             </button>
             <button 
+              className="social-button spotify"
+              onClick={() => handleButtonClick('https://open.spotify.com/show/097nREvXwxla1yY91ZizSB')}
+            >
+              <img src="/images/Spotfiy.png" alt="Spotify" className="social-icon" />
+              Spotify
+            </button>
+            <button 
+              className="social-button apple-podcasts"
+              onClick={() => handleButtonClick('https://podcasts.apple.com/podcast/northstar-politics-show/id1848382459')}
+            >
+              <img src="/images/apple-logo-white.png" alt="Apple" className="social-icon" />
+              Apple
+            </button>
+            <button 
               className="social-button substack"
               onClick={() => handleButtonClick('https://substack.com/@northstarpolitics')}
             >

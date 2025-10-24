@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate": "node -e \"const fs=require('fs'); const html=fs.readFileSync('index.html','utf8'); if(html.match(/<script[^>]*src=\\\"[^\\\"]*(assets\\\\/index-[^\\\"]*\\.js)/)){console.error('❌ ERROR: index.html has production assets! Should use /src/main.tsx'); process.exit(1);} console.log('✅ Validation passed');\""
   },
   "dependencies": {
     "react": "^18.2.0",

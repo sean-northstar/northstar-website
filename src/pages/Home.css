@@ -277,6 +277,8 @@
   height: 24px;
   filter: brightness(0) invert(1);
   transition: all 0.3s ease;
+  object-fit: contain;
+  display: inline-block;
 }
 
 .social-button::before {
@@ -345,6 +347,32 @@
 
 .tiktok:hover .social-icon {
   filter: brightness(0) invert(1);
+}
+
+.spotify:hover {
+  background: #1DB954;
+  border-color: #1DB954;
+  color: white;
+}
+
+.spotify:hover .social-icon {
+  filter: brightness(0) invert(1);
+}
+
+.apple-podcasts .social-icon {
+  /* Invert white logo to make it visible on red background */
+  filter: brightness(0) invert(1);
+}
+
+.apple-podcasts:hover {
+  background: #9b59d0;
+  border-color: #9b59d0;
+  color: white;
+}
+
+.apple-podcasts:hover .social-icon {
+  /* Revert to white logo on purple hover background */
+  filter: brightness(0) invert(0);
 }
 
 /* Responsive Design */
