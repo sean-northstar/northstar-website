@@ -19,7 +19,7 @@ const Support: React.FC = () => {
     <div className="support-page">
       <main className="support-main">
         <div className="support-content">
-          <h1 className="support-title">Support Northstar </h1>
+          <h1 className="support-title">Support Northstar</h1>
           
           <p className="section-text" style={{ textAlign: 'center', marginBottom: '2rem' }}>
             We're an independent duo doing this for the love of the game. Those who support our work early on will be added to a special chat where you can have say in shaping the future of our work and content!
@@ -41,6 +41,12 @@ const Support: React.FC = () => {
             
             <stripe-buy-button
               buy-button-id="buy_btn_1SGMs0EnwS9j9OFlmvw0Iec8"
+              publishable-key="pk_live_51SEXjZEnwS9j9OFlmyMdQKxz7rIHb47MxLJM18X1HnCZ8aOTeffdWGtwftm9rTE2za1uEELkbA5SVlC0zKosk5jn00xVRmDoos"
+            >
+            </stripe-buy-button>
+            
+            <stripe-buy-button
+              buy-button-id="buy_btn_1SnNiKEnwS9j9OFlgIuwbocp"
               publishable-key="pk_live_51SEXjZEnwS9j9OFlmyMdQKxz7rIHb47MxLJM18X1HnCZ8aOTeffdWGtwftm9rTE2za1uEELkbA5SVlC0zKosk5jn00xVRmDoos"
             >
             </stripe-buy-button>
