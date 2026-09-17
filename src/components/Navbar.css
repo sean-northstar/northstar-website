@@ -17,9 +17,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem 0 0;
+  padding: 0;
   position: relative;
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -31,7 +31,10 @@
   padding: 0.5rem 0;
   text-decoration: none;
   flex-shrink: 0;
-  margin-left: -2rem;
+  width: 180px;
+  margin-left: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .navbar-logo:hover {
@@ -39,10 +42,14 @@
 }
 
 .navbar-logo-img {
+  position: absolute;
+  top: 50%;
+  left: -240px;
   width: 600px;
   height: auto;
   max-height: 150px;
   object-fit: contain;
+  transform: translateY(-50%);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
@@ -217,10 +224,12 @@
   }
   
   .navbar-logo {
+    width: auto;
     margin-left: 0;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    overflow: visible;
   }
   
   .navbar-logo:hover {
@@ -228,8 +237,10 @@
   }
   
   .navbar-logo-img {
+    position: static;
     width: 480px;
     max-height: 120px;
+    transform: none;
   }
   
   .navbar-desktop {

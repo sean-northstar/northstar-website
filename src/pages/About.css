@@ -92,6 +92,10 @@
   text-align: left;
 }
 
+.mission-text + .mission-text {
+  margin-top: 1.5rem;
+}
+
 /* Slideshow Styles */
 .slideshow-container {
   flex: 1;

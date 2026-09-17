@@ -39,6 +39,9 @@ const Navbar: React.FC = () => {
           <Link to="/support" className="navbar-link">
             Support us
           </Link>
+          <Link to="/shop" className="navbar-link">
+            Shop
+          </Link>
         </div>
 
         {/* Mobile Dropdown Button */}
@@ -58,6 +61,9 @@ const Navbar: React.FC = () => {
             </Link>
             <Link to="/support" className="dropdown-link" onClick={() => setIsDropdownOpen(false)}>
               Support us
+            </Link>
+            <Link to="/shop" className="dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+              Shop
             </Link>
           </div>
         </div>

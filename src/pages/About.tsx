@@ -175,7 +175,7 @@ const About: React.FC = () => {
           <div className="mission-section">
             <div className="mission-text-container">
               <p className="mission-text">
-                We started Northstar in 2024, when we wanted to help use our skills to hold politicians accountable for their decisions to support the genocide in Gaza. We worked across 4 different independent campaigns for MPs in London including the likes of Jeremy Corbyn. Like many, we're disillusioned with the status quo and so, through content we hope to push the limits of political imagination and host conversations that inspire optimism and idealism.
+                Noah and Sean met whilst reading PPE at Oxford University. Bonding over their shared Caribbean and state-school backgrounds, they immediately became best friends. Disillusioned by corporate careers and Oxford elitism, both took very different paths after graduation, wanting to dedicate their talents to social justice. In 2024, they started Northstar Politics as a pro-bono consultancy to help independent candidates take on mainstream parties in the General Election, as a method of holding parties to account for their complicity in the genocide in Gaza. Since then, they have shifted Northstar to the digital world to produce content which helps hold politicians to account, push the limits of current political imagination and revive a principled way of understanding politics.
               </p>
             </div>
             
