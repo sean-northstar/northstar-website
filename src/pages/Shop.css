@@ -6,7 +6,7 @@
     radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05), transparent 35%),
     linear-gradient(180deg, #e53935 0%, #c62828 55%, #8b0000 100%);
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .shop-page::before {
@@ -26,7 +26,7 @@
 .shop-main {
   min-height: calc(100vh - 80px);
   margin-top: 80px;
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,33 +34,19 @@
   z-index: 2;
 }
 
-.shop-status {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  font-family: 'Poppins', Arial, sans-serif;
-}
-
-.shop-star {
-  font-size: 3rem;
-  animation: shopPulse 1.6s ease-in-out infinite;
-}
-
-@keyframes shopPulse {
-  0%, 100% { opacity: 0.45; transform: scale(0.9) rotate(0); }
-  50% { opacity: 1; transform: scale(1.08) rotate(20deg); }
-}
-
 .shop-content {
-  width: min(100%, 620px);
-  padding: 3rem;
-  text-align: center;
+  width: min(100%, 1080px);
+  padding: 3.5rem;
   border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 24px;
+  border-radius: 28px;
   background: rgba(92, 0, 0, 0.24);
   box-shadow: 0 24px 70px rgba(61, 0, 0, 0.28);
   backdrop-filter: blur(14px);
+}
+
+.shop-header {
+  margin-bottom: 2.75rem;
+  text-align: center;
 }
 
 .shop-eyebrow {
@@ -74,40 +60,166 @@
 }
 
 .shop-title {
+  margin-bottom: 0.75rem;
   font-family: 'Lora', serif;
   font-weight: 500;
   line-height: 1.15;
-  margin-bottom: 1rem;
   font-size: clamp(3rem, 8vw, 5rem);
 }
 
 .shop-intro {
   max-width: 460px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto;
   font-family: 'Poppins', Arial, sans-serif;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.88);
 }
 
-.stripe-product {
-  min-height: 180px;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
+.shop-product {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 2.5rem;
   align-items: center;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.96);
+}
+
+.shop-gallery {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-rows: 115px 270px;
+  gap: 0.9rem;
+}
+
+.shop-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(51, 0, 0, 0.24);
+  background: #a31515;
+}
+
+.shop-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.shop-photo:hover img {
+  transform: scale(1.025);
+}
+
+.shop-photo-main {
+  grid-row: 1 / 3;
+}
+
+.shop-photo-main img {
+  object-position: center 60%;
+}
+
+.shop-photo-secondary {
+  grid-row: 2;
+}
+
+.shop-photo-secondary img {
+  object-position: center;
+}
+
+.shop-product-details {
+  min-width: 0;
+}
+
+.shop-product-details h2 {
+  margin: 0 0 1rem;
+  font-family: 'Lora', serif;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.shop-product-copy {
+  margin: 0 0 1.75rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.stripe-product {
+  min-height: 0;
+}
+
+.stripe-product stripe-buy-button {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .shop-content {
+    width: min(100%, 680px);
+  }
+
+  .shop-product {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .shop-gallery {
+    grid-template-rows: 130px 300px;
+  }
 }
 
 @media (max-width: 600px) {
   .shop-main {
     margin-top: 70px;
     min-height: calc(100vh - 70px);
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 3rem;
   }
 
   .shop-content {
     padding: 2rem 1.25rem;
     border-radius: 18px;
   }
+
+  .shop-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .shop-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .shop-photo {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .shop-photo-main {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .shop-photo-secondary {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .shop-product-details {
+    text-align: center;
+  }
+
+  .shop-product-details h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .shop-product-copy {
+    max-width: 410px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
 }
